@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Lab4.Models.Book">
+    <Position X="11.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAEAAgAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Book.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Card" />
+      <Property Name="Genre" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Lab4.Models.BookCard">
+    <Position X="14.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAwBCAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Models\Book.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab4.Models.Librarian">
+    <Position X="0.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAEAAQIAAAAAAAAAIAACAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Librarian.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab4.Models.Library">
+    <Position X="3.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAEBAAAEAAQAAAAAAAEgAAAAAgAAAAAQAAAAAAAAQA=</HashCode>
+      <FileName>Models\Library.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="SubscribersList" />
+      <Field Name="Librarian" />
+      <Field Name="TechDepartment" />
+      <Field Name="FictionDepartment" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Lab4.Models.Command">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Library.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab4.Models.AddSubCommand">
+    <Position X="6.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAICAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Library.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab4.Models.RemoveSubCommand">
+    <Position X="8.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAICAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Library.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab4.Models.IssueBookCommand">
+    <Position X="10.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAQAKAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Library.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab4.Models.ReturnBookCommand">
+    <Position X="13" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAIAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Library.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab4.Models.LibraryDepartment">
+    <Position X="7.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAACABgAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Models\LibraryDepartment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Books" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Lab4.Models.TechDepartment">
+    <Position X="6" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\LibraryDepartment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab4.Models.FictionDepartment">
+    <Position X="8.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\LibraryDepartment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab4.Models.Subscriber">
+    <Position X="12" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAABAAAAQAAAAEAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Subscriber.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="OwnedBooks" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Lab4.Models.SubscribersList">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEBAAAAAAAAAAACAAAAAAAAAgBAAQAQAAAACAAAAA=</HashCode>
+      <FileName>Models\SubscribersList.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_subscribers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Lab4.ViewModels.MainViewModel">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAABAAAAAAQiAAAIAAABAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Lib" />
+      <Field Name="SubList" />
+      <Field Name="Command" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="Lab4.Models.Genre">
+    <Position X="11.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Models\Book.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

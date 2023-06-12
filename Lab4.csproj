@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Librarians\**" />
+    <Compile Remove="Subscribers\**" />
+    <EmbeddedResource Remove="Librarians\**" />
+    <EmbeddedResource Remove="Subscribers\**" />
+    <None Remove="Librarians\**" />
+    <None Remove="Subscribers\**" />
+  </ItemGroup>
+
+</Project>
