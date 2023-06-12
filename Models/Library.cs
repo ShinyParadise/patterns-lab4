@@ -15,24 +15,13 @@
             SubscribersList.RemoveSub(sub);
         }
 
-        public bool IssueBook(string title, int userId)
+        public void IssueBook(int bookId, int userId)
         {
-            var bookToIssue = TechDepartment.TakeABook(title);
-            if (bookToIssue != null)
-            {
-                Librarian.IssueBook(userId, bookToIssue);
-                return true;
-            }
-            
-            bookToIssue = FictionDepartment.TakeABook(title);
-            if (bookToIssue != null)
-            {
-                Librarian.IssueBook(userId, bookToIssue);
-                return true;
-            }
+            Book? book = TechDepartment.TakeABook(bookId);
+            if (book == null) { book = FictionDepartment.TakeABook(bookId); }
+            if (book == null) {  return; }
 
-            Console.WriteLine("Book wasn't found in any department");
-            return false;
+            Librarian.IssueBook(userId, book);
         }
 
         public void ReturnBook(Book book)
@@ -50,8 +39,8 @@
 
         private SubscribersList SubscribersList = SubscribersList.Instance;
         private Librarian Librarian = new();
-        private TechDepartment TechDepartment = TechDepartment.Instance;
-        private FictionDepartment FictionDepartment = FictionDepartment.Instance;
+        public TechDepartment TechDepartment { get; private set; } = TechDepartment.Instance;
+        public FictionDepartment FictionDepartment { get; private set; } = FictionDepartment.Instance;
     }
 
     // Абстрактная команда
@@ -99,22 +88,17 @@
     {
         Library Lib;
         int userId;
-        string title;
+        int bookId;
 
-        public IssueBookCommand(Library lib, int userId, string title)
+        public IssueBookCommand(Library lib, int userId, int bookId)
         {
             Lib = lib;
             this.userId = userId;
-            this.title = title;
+            this.bookId = bookId;
         }
         public override void Execute()
         {
-            var hasSucceded = Lib.IssueBook(title, userId);
-            if (hasSucceded)
-            {
-                Console.WriteLine($"Successfully issued book {title} to abonent #{userId}");
-            }
-            else { Console.WriteLine("Book hasn't been issued"); }
+            Lib.IssueBook(bookId, userId);
         }
     }
 

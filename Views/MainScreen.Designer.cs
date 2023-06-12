@@ -20,8 +20,16 @@
             AddSubBtn = new Button();
             SubName = new TextBox();
             SubListLabel = new Label();
-            SubListBox = new ListBox();
+            SubList = new ListBox();
             RemoveSubBtn = new Button();
+            Logo = new PictureBox();
+            OwnedBooksList = new ListBox();
+            AllBooksList = new ListBox();
+            BookListLabel = new Label();
+            OwnedBooksLabel = new Label();
+            IssueBookBtn = new Button();
+            ReturnBookBtn = new Button();
+            ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
             SuspendLayout();
             // 
             // AddSubBtn
@@ -54,15 +62,15 @@
             SubListLabel.TabIndex = 2;
             SubListLabel.Text = "Список читателей";
             // 
-            // SubListBox
+            // SubList
             // 
-            SubListBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            SubListBox.FormattingEnabled = true;
-            SubListBox.ItemHeight = 23;
-            SubListBox.Location = new Point(27, 224);
-            SubListBox.Name = "SubListBox";
-            SubListBox.Size = new Size(239, 349);
-            SubListBox.TabIndex = 3;
+            SubList.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            SubList.FormattingEnabled = true;
+            SubList.ItemHeight = 23;
+            SubList.Location = new Point(27, 224);
+            SubList.Name = "SubList";
+            SubList.Size = new Size(239, 349);
+            SubList.TabIndex = 3;
             // 
             // RemoveSubBtn
             // 
@@ -75,19 +83,99 @@
             RemoveSubBtn.UseVisualStyleBackColor = true;
             RemoveSubBtn.Click += RemoveSubBtn_Click;
             // 
+            // Logo
+            // 
+            Logo.BackgroundImage = Lab4.Properties.Resources.Logo;
+            Logo.BackgroundImageLayout = ImageLayout.Stretch;
+            Logo.Location = new Point(1059, 12);
+            Logo.Name = "Logo";
+            Logo.Size = new Size(181, 171);
+            Logo.TabIndex = 5;
+            Logo.TabStop = false;
+            // 
+            // OwnedBooksList
+            // 
+            OwnedBooksList.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            OwnedBooksList.FormattingEnabled = true;
+            OwnedBooksList.ItemHeight = 23;
+            OwnedBooksList.Location = new Point(388, 224);
+            OwnedBooksList.Name = "OwnedBooksList";
+            OwnedBooksList.Size = new Size(239, 349);
+            OwnedBooksList.TabIndex = 6;
+            // 
+            // AllBooksList
+            // 
+            AllBooksList.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            AllBooksList.FormattingEnabled = true;
+            AllBooksList.ItemHeight = 23;
+            AllBooksList.Location = new Point(752, 224);
+            AllBooksList.Name = "AllBooksList";
+            AllBooksList.Size = new Size(488, 349);
+            AllBooksList.TabIndex = 7;
+            // 
+            // BookListLabel
+            // 
+            BookListLabel.AutoSize = true;
+            BookListLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BookListLabel.Location = new Point(765, 176);
+            BookListLabel.Name = "BookListLabel";
+            BookListLabel.Size = new Size(211, 28);
+            BookListLabel.TabIndex = 8;
+            BookListLabel.Text = "Книги в библиотеке";
+            // 
+            // OwnedBooksLabel
+            // 
+            OwnedBooksLabel.AutoSize = true;
+            OwnedBooksLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            OwnedBooksLabel.Location = new Point(408, 176);
+            OwnedBooksLabel.Name = "OwnedBooksLabel";
+            OwnedBooksLabel.Size = new Size(182, 28);
+            OwnedBooksLabel.TabIndex = 9;
+            OwnedBooksLabel.Text = "Книги у читателя";
+            // 
+            // IssueBookBtn
+            // 
+            IssueBookBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            IssueBookBtn.Location = new Point(752, 606);
+            IssueBookBtn.Name = "IssueBookBtn";
+            IssueBookBtn.Size = new Size(239, 43);
+            IssueBookBtn.TabIndex = 11;
+            IssueBookBtn.Text = "Взять книгу";
+            IssueBookBtn.UseVisualStyleBackColor = true;
+            IssueBookBtn.Click += IssueBookBtn_Click;
+            // 
+            // ReturnBookBtn
+            // 
+            ReturnBookBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ReturnBookBtn.Location = new Point(388, 606);
+            ReturnBookBtn.Name = "ReturnBookBtn";
+            ReturnBookBtn.Size = new Size(239, 43);
+            ReturnBookBtn.TabIndex = 12;
+            ReturnBookBtn.Text = "Вернуть книгу";
+            ReturnBookBtn.UseVisualStyleBackColor = true;
+            ReturnBookBtn.Click += ReturnBookBtn_Click;
+            // 
             // MainScreen
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1252, 673);
+            Controls.Add(ReturnBookBtn);
+            Controls.Add(IssueBookBtn);
+            Controls.Add(OwnedBooksLabel);
+            Controls.Add(BookListLabel);
+            Controls.Add(AllBooksList);
+            Controls.Add(OwnedBooksList);
+            Controls.Add(Logo);
             Controls.Add(RemoveSubBtn);
-            Controls.Add(SubListBox);
+            Controls.Add(SubList);
             Controls.Add(SubListLabel);
             Controls.Add(SubName);
             Controls.Add(AddSubBtn);
             Name = "MainScreen";
             Text = "Library";
             Load += MainScreen_Load;
+            ((System.ComponentModel.ISupportInitialize)Logo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -97,7 +185,14 @@
         private Button AddSubBtn;
         private TextBox SubName;
         private Label SubListLabel;
-        private ListBox SubListBox;
+        private ListBox SubList;
         private Button RemoveSubBtn;
+        private PictureBox Logo;
+        private ListBox OwnedBooksList;
+        private ListBox AllBooksList;
+        private Label BookListLabel;
+        private Label OwnedBooksLabel;
+        private Button IssueBookBtn;
+        private Button ReturnBookBtn;
     }
 }

@@ -28,7 +28,7 @@
 
         public Subscriber this[int i]
         {
-            get { return Subscribers[i]; }
+            get { return Subscribers.First(s => s.Id == i); }
         }
 
         public Subscriber? FindSub(int userId)
