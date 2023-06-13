@@ -29,6 +29,7 @@
             OwnedBooksLabel = new Label();
             IssueBookBtn = new Button();
             ReturnBookBtn = new Button();
+            NotifyBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
             SuspendLayout();
             // 
@@ -138,7 +139,7 @@
             IssueBookBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             IssueBookBtn.Location = new Point(752, 606);
             IssueBookBtn.Name = "IssueBookBtn";
-            IssueBookBtn.Size = new Size(239, 43);
+            IssueBookBtn.Size = new Size(488, 43);
             IssueBookBtn.TabIndex = 11;
             IssueBookBtn.Text = "Взять книгу";
             IssueBookBtn.UseVisualStyleBackColor = true;
@@ -155,11 +156,23 @@
             ReturnBookBtn.UseVisualStyleBackColor = true;
             ReturnBookBtn.Click += ReturnBookBtn_Click;
             // 
+            // NotifyBtn
+            // 
+            NotifyBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            NotifyBtn.Location = new Point(388, 101);
+            NotifyBtn.Name = "NotifyBtn";
+            NotifyBtn.Size = new Size(488, 43);
+            NotifyBtn.TabIndex = 13;
+            NotifyBtn.Text = "Оповестить читаталей о сроках сдачи";
+            NotifyBtn.UseVisualStyleBackColor = true;
+            NotifyBtn.Click += Notify_Click;
+            // 
             // MainScreen
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1252, 673);
+            Controls.Add(NotifyBtn);
             Controls.Add(ReturnBookBtn);
             Controls.Add(IssueBookBtn);
             Controls.Add(OwnedBooksLabel);
@@ -194,5 +207,6 @@
         private Label OwnedBooksLabel;
         private Button IssueBookBtn;
         private Button ReturnBookBtn;
+        private Button NotifyBtn;
     }
 }

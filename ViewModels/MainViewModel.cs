@@ -34,6 +34,12 @@ namespace Lab4.ViewModels
             Command.Execute();
         }
 
+        public void Notify()
+        {
+            Command = new NotifySubCommand(Lib);
+            Command.Execute();
+        }
+
         public void AddSampleData()
         {
             SubList.AddSub(new Subscriber("Иван"));
@@ -99,5 +105,6 @@ namespace Lab4.ViewModels
         public int selectedSub { get; set; } = -1;
         public int bookToTake { get; set; } = -1;
         public int bookToReturn { get; set; } = -1;
+        public int notifiedSub { get => Lib.notifiedSub; }
     }
 }

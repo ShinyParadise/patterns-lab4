@@ -34,11 +34,24 @@
                 FictionDepartment.PutABook(book);
         }
 
+        public void Notify()
+        {
+            notifiedSub = 0;
+            SubscribersList.Subscribers.ForEach(s => {
+                if (s.OwnedBooks.Count > 0)
+                {
+                    s.NotifyObservers();
+                    notifiedSub++;
+                }
+            });
+        }
+
         private static Library _instance = new();
         public static Library Instance { get { return _instance; } }
 
         private SubscribersList SubscribersList = SubscribersList.Instance;
         private Librarian Librarian = new();
+        public int notifiedSub { get; private set; } = 0;
         public TechDepartment TechDepartment { get; private set; } = TechDepartment.Instance;
         public FictionDepartment FictionDepartment { get; private set; } = FictionDepartment.Instance;
     }
@@ -116,6 +129,21 @@
         {
             Lib.ReturnBook(book);
             Console.WriteLine($"Book {book.Title} was returned");
+        }
+    }
+
+    public class NotifySubCommand : Command
+    {
+        Library Lib;
+
+        public NotifySubCommand(Library lib)
+        {
+            Lib = lib;
+        }
+
+        public override void Execute()
+        {
+            Lib.Notify();
         }
     }
 }

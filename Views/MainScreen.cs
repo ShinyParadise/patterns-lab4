@@ -122,6 +122,12 @@ namespace Lab4_Library
             UpdateAllLists();
         }
 
+        public void Notify_Click(object sender, EventArgs e)
+        {
+            viewModel.Notify();
+            MessageBox.Show($"Оповещено {viewModel.notifiedSub} читателей");
+        }
+
         private void SubList_SelectedIndexChanged(object? sender, EventArgs e)
         {
             UpdateOwnedBooksList();

@@ -1,9 +1,6 @@
 ﻿namespace Lab4.Models
 {
-    public delegate void Del(object o);
-
-    // Издатель
-    public class Librarian
+    public class Librarian : IObserver
     {
         public void IssueBook(int userId, Book book)
         {
@@ -22,26 +19,13 @@
             book.Card.ReturnBook();
         }
 
-        public void RegisterSub(Del d)
+        public void Update(object o)
         {
-            Delegates += d;
-        }
-
-        public void UnregisterSub(Del d)
-        {
-            if (Delegates == null) return;
-
-            Delegates -= d;
-        }
-
-        public void NotifySubs()
-        {
-            if (Delegates == null) return;
-
-            Delegates(this);
+            int userId = int.Parse(o.ToString());
+            var sub = SubscribersList[userId];
+            sub.Fine(500);
         }
 
         private SubscribersList SubscribersList = SubscribersList.Instance;
-        private Del? Delegates;  // Объявление списка делегатов
     }
 }
