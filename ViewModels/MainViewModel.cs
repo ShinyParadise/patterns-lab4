@@ -42,8 +42,8 @@ namespace Lab4.ViewModels
 
         public void AddSampleData()
         {
-            SubList.AddSub(new Subscriber("Иван"));
-            SubList.AddSub(new Subscriber("Даша"));
+            Lib.AddSub(new Subscriber("Иван"));
+            Lib.AddSub(new Subscriber("Даша"));
 
             var newBook = new Book(
                 "Приключения барона Мюнхаузена",

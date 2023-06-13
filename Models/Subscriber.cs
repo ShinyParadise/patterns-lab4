@@ -13,15 +13,15 @@ namespace Lab4.Models
 
         public void Fine(int amount)
         {
-            Console.WriteLine($"You are fined for overdue. You must pay {amount}");
+            MessageBox.Show($"{Name}: Верните книгу поскорее, иначе вам придется заплатить штраф в размере {amount} рублей");
         }
 
-        void IObservable.RegisterObserver(IObserver o)
+        public void RegisterObserver(IObserver o)
         {
             observers.Add(o);
         }
 
-        void IObservable.RemoveObserver(IObserver o)
+        public void RemoveObserver(IObserver o)
         {
             observers.Remove(o);
         }
@@ -41,15 +41,15 @@ namespace Lab4.Models
         private List<IObserver> observers = new();
     }
 
-    interface IObserver
+    public interface IObserver
     {
-        void Update(object o);
+        public void Update(object o);
     }
 
-    interface IObservable
+    public interface IObservable
     {
-        void RegisterObserver(IObserver o);
-        void RemoveObserver(IObserver o);
-        void NotifyObservers();
+        public void RegisterObserver(IObserver o);
+        public void RemoveObserver(IObserver o);
+        public void NotifyObservers();
     }
 }

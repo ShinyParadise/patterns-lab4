@@ -3,15 +3,26 @@
     // Получатель команд
     public class Library
     {
-        private Library() {}
+        private Library()
+        {
+            SubscribersList = SubscribersList.Instance;
+            Librarian = new();
+
+            foreach (Subscriber sub in SubscribersList.Subscribers)
+            {
+                sub.RegisterObserver(Librarian);
+            }
+        }
 
         public void AddSub(Subscriber sub)
         {
             SubscribersList.AddSub(sub);
+            sub.RegisterObserver(Librarian);
         }
 
         public void RemoveSub(Subscriber sub)
         {
+            sub.RemoveObserver(Librarian);
             SubscribersList.RemoveSub(sub);
         }
 
@@ -46,11 +57,19 @@
             });
         }
 
-        private static Library _instance = new();
-        public static Library Instance { get { return _instance; } }
+        private static Library? _instance;
+        public static Library Instance
+        {
+            get
+            { 
+                if (_instance == null)
+                    _instance = new Library();
+                return _instance;
+            }
+        }
 
-        private SubscribersList SubscribersList = SubscribersList.Instance;
-        private Librarian Librarian = new();
+        private SubscribersList SubscribersList;
+        private Librarian Librarian;
         public int notifiedSub { get; private set; } = 0;
         public TechDepartment TechDepartment { get; private set; } = TechDepartment.Instance;
         public FictionDepartment FictionDepartment { get; private set; } = FictionDepartment.Instance;
