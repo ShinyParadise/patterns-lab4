@@ -88,7 +88,7 @@
             // 
             Logo.BackgroundImage = Lab4.Properties.Resources.Logo;
             Logo.BackgroundImageLayout = ImageLayout.Stretch;
-            Logo.Location = new Point(1059, 12);
+            Logo.Location = new Point(1241, 12);
             Logo.Name = "Logo";
             Logo.Size = new Size(181, 171);
             Logo.TabIndex = 5;
@@ -111,7 +111,7 @@
             AllBooksList.ItemHeight = 23;
             AllBooksList.Location = new Point(752, 224);
             AllBooksList.Name = "AllBooksList";
-            AllBooksList.Size = new Size(488, 349);
+            AllBooksList.Size = new Size(670, 349);
             AllBooksList.TabIndex = 7;
             // 
             // BookListLabel
@@ -139,7 +139,7 @@
             IssueBookBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             IssueBookBtn.Location = new Point(752, 606);
             IssueBookBtn.Name = "IssueBookBtn";
-            IssueBookBtn.Size = new Size(488, 43);
+            IssueBookBtn.Size = new Size(670, 43);
             IssueBookBtn.TabIndex = 11;
             IssueBookBtn.Text = "Взять книгу";
             IssueBookBtn.UseVisualStyleBackColor = true;
@@ -159,9 +159,9 @@
             // NotifyBtn
             // 
             NotifyBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            NotifyBtn.Location = new Point(388, 101);
+            NotifyBtn.Location = new Point(388, 41);
             NotifyBtn.Name = "NotifyBtn";
-            NotifyBtn.Size = new Size(488, 43);
+            NotifyBtn.Size = new Size(805, 103);
             NotifyBtn.TabIndex = 13;
             NotifyBtn.Text = "Оповестить читаталей о сроках сдачи";
             NotifyBtn.UseVisualStyleBackColor = true;
@@ -171,7 +171,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1252, 673);
+            ClientSize = new Size(1434, 672);
             Controls.Add(NotifyBtn);
             Controls.Add(ReturnBookBtn);
             Controls.Add(IssueBookBtn);

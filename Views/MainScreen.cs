@@ -30,7 +30,7 @@ namespace Lab4_Library
         private void UpdateAllBooksList()
         {
             var books = viewModel.GetAllBooks;
-            var bookNames = books.Select(s => s.Title).ToArray();
+            var bookNames = books.Select(s => $"{s.Title} | {s.Author}").ToArray();
             AllBooksList.Items.Clear();
             AllBooksList.Items.AddRange(bookNames);
         }
@@ -59,8 +59,6 @@ namespace Lab4_Library
             OwnedBooksList.Items.Clear();
             OwnedBooksList.Items.AddRange(books);
         }
-
-
 
         private void AddSubBtn_Click(object sender, EventArgs e)
         {

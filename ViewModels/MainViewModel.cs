@@ -80,9 +80,51 @@ namespace Lab4.ViewModels
                 "10 полка 1 ряд",
                 Genre.Tech
             );
+            var newBook6 = new Book(
+                "Экстремальное программирование",
+                "Кент Бек",
+                new BookCard(),
+                "4 полка 12 ряд",
+                Genre.Tech
+            );
+            var newBook7 = new Book(
+                "Дизайн для недизайнеров",
+                "Робин Уильямс",
+                new BookCard(),
+                "5 полка 13 ряд",
+                Genre.Tech
+            );
+            var newBook8 = new Book(
+                "Таня Гроттер",
+                "Дмитрий Емец",
+                new BookCard(),
+                "3 полка 7 ряд",
+                Genre.Fiction
+            );
+            var newBook9 = new Book(
+                "Дневник Домового",
+                "Евгений Чеширко",
+                new BookCard(),
+                "12 полка 7 ряд",
+                Genre.Fiction
+            );
+            var newBook10 = new Book(
+                "Сборник стихов",
+                "Анна Ахматова",
+                new BookCard(),
+                "14 полка 1 ряд",
+                Genre.Fiction
+            );
+            var newBook11 = new Book(
+                "Гарри Поттер",
+                "Джоан Роулинг",
+                new BookCard(),
+                "10 полка 1 ряд",
+                Genre.Fiction
+            );
 
-            Lib.TechDepartment.PutABook(newBook5);
-            Lib.FictionDepartment.PutABook(newBook, newBook2, newBook3, newBook4);
+            Lib.TechDepartment.PutABook(newBook5, newBook6, newBook7);
+            Lib.FictionDepartment.PutABook(newBook, newBook2, newBook3, newBook4, newBook8, newBook9, newBook10, newBook11);
         }
 
         public int SubCount { get => SubList.SubCount; }

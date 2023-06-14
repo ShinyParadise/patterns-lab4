@@ -45,7 +45,7 @@
                 FictionDepartment.PutABook(book);
         }
 
-        public void Notify()
+        public void CheckSubs()
         {
             notifiedSub = 0;
             SubscribersList.Subscribers.ForEach(s => {
@@ -162,7 +162,7 @@
 
         public override void Execute()
         {
-            Lib.Notify();
+            Lib.CheckSubs();
         }
     }
 }
